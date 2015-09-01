@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>一键办理</title>
+<link href="css/base.css" type="text/css" rel="stylesheet">
+<link href="css/addlv.css" type="text/css" rel="stylesheet">
+</head>
+<body class="body">
+  
+    <div class="preview" id="preview">
+        <!--
+        <div class="preview_img" >
+            <img src="images/preview3.png" id="preview_img"/>
+        </div>
+        <div class="preview_num cost" id="preview_num" ><span>金额</span></div>
+        <div class="preview_msg" id="preview_msg">事项</div>
+        <div class="preview_delete" id="preview_delete">
+            <a href="#"><img src="images/delete3.png"/></a>
+        </div>   
+        !-->
+    </div>
+    <div class="choose">
+        <p>选择账目类型</p>
+        <ul class="choose-img" id='choose'>
+            <li><img src="images/food.png" alt='food' data-id='food'></li>
+            <li><img src="images/dress.png" alt='dress' data-id='dress'></li>
+            <li><img src="images/transport.png" alt='transport' data-id='transport'></li>
+            <li><img src="images/shopping.png" alt='shopping' data-id='shopping'></li>
+            <li><img src="images/income.png" alt='income' data-id='income'></li>
+        </ul>
+    </div>
+    <div class="project">
+        <div class="o"></div>
+        <span>事项</span><input type="text" id="msg"/>
+    </div>
+    <div class="project">
+        <div class="o"></div>
+        <span>金额</span><input type="text" id="money"/>
+    </div>
+    <button class="but" id="save">保存</button>
+    
+    <script src='js/zepto.min.js'></script>
+    <script src='js/util.js'></script>
+    <script>
+    (function(){
+        
+        //预览模块
+        var url=location.search;
+        if(url.indexOf("?")!=-1){
+            var str=url.substr(1),
+                keyname=str.substr(str.indexOf('=')+1);
+        }
+        var html='',
+            preview=util.$('preview');
+            
+        for(key in localStorage){
+            if(key==keyname){
+                var obj = util.readData(key),
+                    key2 = key.replace(/\d*/g,''),
+                    colorClass = key2 == 'income'? "earn" : "cost" ,
+                    symbol =  key2 == 'income'? '+':'-';
+                html+='<div class="preview_img"><img src="images/'+key2+'.png" id="preview_img"/></div>'+'<div class="preview_num '+colorClass+'" id="preview_num"><span>'+symbol+obj.money+'</span></div>'+'<div class="preview_msg" id="preview_msg">'+obj.msg+'</div>'+'<div class="preview_delete" id="preview_delete"><a href="#"><img src="images/delete3.png"/></a></div>';
+            }
+        }
+        preview.innerHTML=html;
+        
+            var category;
+            var choose = util.$('choose');
+            var msg = util.$('msg');
+            var money = util.$('money');
+            var save = util.$('save');
+            var target_in;
+            var preview_num = util.$('preview_num');
+            var preview_msg = util.$('preview_msg');
+            var target_touch = '';
+        
+        //自动填充
+        var imgs = choose.getElementsByTagName('img');
+        for(var j=0;j<imgs.length;j++){
+            if(imgs[j].dataset.id==key2){
+                category = key2;
+                var target_in=imgs[j];
+                imgs[j].className='choose_img';
+                target_touch=imgs[j];
+            }
+        }
+        money.value=obj.money;
+        msg.value=obj.msg;
+        
+        
+        //选择账目事件
+        $('#choose').tap(function(event){
+            //util.addEvent(choose,'touchstart',function(event){
+                var e = util.getEvent(event);
+                target_touch = util.getTarget(e);
+                if(target_touch.parentNode.parentNode==choose){
+                    if(!category){
+                        category = target_touch.dataset.id;
+                        target_touch.className='choose_img';
+                        target_in = target_touch;
+                    }else{
+                        target_in.className='';
+                        category=target_touch.dataset.id;
+                        target_touch.className='choose_img';
+                        target_in = target_touch;
+                    }
+                    var colorClass2= category=='income'?'earn' : 'cost',
+                        symbol2 =  category == 'income'? '+':'-';
+                    util.$('preview_img').src='images/'+category+'.png';
+                    preview_num.className = "preview_num "+colorClass2;
+                    preview_num.innerHTML='<span>'+symbol2+money.value+'</span>';
+                }
+            });
+        
+        //实时预览
+            if('\v'=='v'){
+                money.onpropertychange = previewNum;
+                msg.onpropertychange = previewMsg;
+            }else{
+                util.addEvent(money,'input',previewNum);
+                util.addEvent(msg,'input',previewMsg);
+            }
+            function previewNum(){
+                if(money){
+                    preview_num.innerHTML='';
+                    var symbol2 =  category == 'income'? '+':'-';
+                    preview_num.innerHTML='<span>'+symbol2+money.value+'</span>';
+                }
+            }
+            function previewMsg(){
+                if(msg){
+                    preview_msg.innerHTML=msg.value;
+                }
+            }
+        
+        //清空
+            var preview_delete=util.$('preview_delete');
+        $('#preview_delete').tap(function(event){
+            //util.addEvent(preview_delete,'touchstart',function(event){
+                event=util.getEvent(event);
+                util.preventEvent(event);
+                preview_num.innerHTML='<span>金额</span>';
+                preview_msg.innerHTML='事项';
+                util.$('preview_img').src='images/preview3.png';
+                target_touch.className='';
+                msg.value='';
+                money.value='';
+                
+            });
+                    
+        
+        //保存
+        $('#save').tap(function(){
+            //util.addEvent(save,'click',function(event){
+               if(category && msg.value && money.value){
+                   var edit_count=keyname.substring(0,keyname.indexOf(key2));
+                   var now = new Date();
+                   var month = now.getMonth()+1;
+                   var dataObj = {money:money.value,msg:msg.value,mont:month};
+                   localStorage.removeItem(keyname);
+                   util.saveData(edit_count+category, dataObj);
+                   window.location.href = 'index.html';
+               }else if(!category){
+                   alert('请选择账目类型');
+               }else if(!msg.value){
+                   alert('请输入事项');
+               }else if(!money.value){
+                   alert('请输入金额');
+               }
+            });
+    })();
+    </script>
+</body>
+</html>
