@@ -51,6 +51,7 @@ body{
 /*list_item*/
 #list_item{
     width:100%;
+    -webkit-tap-highlight-color:rgba(255,255,255,0);
 }
 .date_wrap{
     width:100%;
