@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 这是我们 [拉光纤] 团队做的移动记账本。
 目前能实现的功能有：
@@ -9,3 +10,7 @@
   
 
 demo演示:http://lgxscnu.github.io/mobile-note/
+=======
+# mobile-task
+移动端个人记账本
+>>>>>>> d994c3d1414cafc4d9c1ea0b76169496263f8098
