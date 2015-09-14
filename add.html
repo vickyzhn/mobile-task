@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html>
-=======
->>>>>>> ff1fb1fbfd3e568fb2ae45832eacb489029f9057
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
@@ -61,7 +58,6 @@
             var target_touch = '';
         
         //选择账目事件
-<<<<<<< HEAD
         //$('#choose').tap(function(event){
             util.addEvent(choose,'touchstart',function(event){
                 var e = util.getEvent(event);
@@ -70,14 +66,6 @@
                 {
                     if(!category)//第一次选择时
                     {
-=======
-        $('#choose').tap(function(event){
-            //util.addEvent(choose,'touchstart',function(event){
-                var e = util.getEvent(event);
-                target_touch = util.getTarget(e);
-                if(target_touch.parentNode.parentNode==choose){
-                    if(!category){
->>>>>>> ff1fb1fbfd3e568fb2ae45832eacb489029f9057
                         category = target_touch.dataset.id;
                         target_touch.className='choose_img';
                         target_in = target_touch;
@@ -88,12 +76,8 @@
                         target_in = target_touch;
                     }
                     util.$('preview_img').src='images/'+category+'.png';
-<<<<<<< HEAD
                     if(money.value)//确保后期输入账目金额后改动账目类型时，‘+’‘-’号与账目类型同步
                     {
-=======
-                    if(money.value){
->>>>>>> ff1fb1fbfd3e568fb2ae45832eacb489029f9057
                         var colorClass2= category=='income'?'earn' : 'cost',
                             symbol2 =  category == 'income'? '+':'-';
                         preview_num.className = "preview_num "+colorClass2;
@@ -127,13 +111,8 @@
         
         //删除
             var preview_delete=util.$('preview_delete');
-<<<<<<< HEAD
         //$('#preview_delete').tap(function(event){
             util.addEvent(preview_delete,'touchstart',function(event){
-=======
-        $('#preview_delete').tap(function(event){
-            //util.addEvent(preview_delete,'touchstart',function(event){
->>>>>>> ff1fb1fbfd3e568fb2ae45832eacb489029f9057
                 event=util.getEvent(event);
                 util.preventEvent(event);
                 preview_num.innerHTML='<span>金额</span>';
@@ -147,13 +126,8 @@
                     
         
         //保存
-<<<<<<< HEAD
         //$('#save').tap(function(event){
             util.addEvent(save,'touchstart',function(event){
-=======
-        $('#save').tap(function(event){
-            //util.addEvent(save,'touchstart',function(event){
->>>>>>> ff1fb1fbfd3e568fb2ae45832eacb489029f9057
                if(category && msg.value && money.value){
                     var count = localStorage.count ? Number(localStorage.count) : 0;
                     var now = new Date();
