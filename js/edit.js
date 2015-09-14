@@ -10,8 +10,14 @@
     
     for(key in localStorage){
         
+<<<<<<< HEAD
         if(localStorage.hasOwnProperty(key) && key!=="length" && key!=="count"){
             key_name.push(key);
+=======
+        key_name.push(key);
+        
+        if(localStorage.hasOwnProperty(key) && key!=="length" && key!=="count"){
+>>>>>>> ff1fb1fbfd3e568fb2ae45832eacb489029f9057
             var obj = util.readData(key);
             var now = new Date();
             var year = now.getFullYear();
@@ -42,7 +48,10 @@
         
         //向左滑动
         (function(m){
+<<<<<<< HEAD
             console.log(key_name[m]);
+=======
+>>>>>>> ff1fb1fbfd3e568fb2ae45832eacb489029f9057
             $("#list_con"+m).swipeLeft(function(){
                 if(this.style.overflow=='visible'){
                     this.style.overflow='hidden';
