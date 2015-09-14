@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html>
-=======
->>>>>>> ff1fb1fbfd3e568fb2ae45832eacb489029f9057
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
@@ -57,10 +54,6 @@
             var str=url.substr(1),
                 keyname=str.substr(str.indexOf('=')+1);
         }
-<<<<<<< HEAD
-        console.log(keyname);
-=======
->>>>>>> ff1fb1fbfd3e568fb2ae45832eacb489029f9057
         var html='',
             preview=util.$('preview');
             
@@ -100,13 +93,8 @@
         
         
         //选择账目事件
-<<<<<<< HEAD
         //$('#choose').tap(function(event){
             util.addEvent(choose,'touchstart',function(event){
-=======
-        $('#choose').tap(function(event){
-            //util.addEvent(choose,'touchstart',function(event){
->>>>>>> ff1fb1fbfd3e568fb2ae45832eacb489029f9057
                 var e = util.getEvent(event);
                 target_touch = util.getTarget(e);
                 if(target_touch.parentNode.parentNode==choose){
@@ -151,13 +139,8 @@
         
         //清空
             var preview_delete=util.$('preview_delete');
-<<<<<<< HEAD
         //$('#preview_delete').tap(function(event){
             util.addEvent(preview_delete,'touchstart',function(event){
-=======
-        $('#preview_delete').tap(function(event){
-            //util.addEvent(preview_delete,'touchstart',function(event){
->>>>>>> ff1fb1fbfd3e568fb2ae45832eacb489029f9057
                 event=util.getEvent(event);
                 util.preventEvent(event);
                 preview_num.innerHTML='<span>金额</span>';
@@ -171,13 +154,8 @@
                     
         
         //保存
-<<<<<<< HEAD
         //$('#save').tap(function(){
             util.addEvent(save,'click',function(event){
-=======
-        $('#save').tap(function(){
-            //util.addEvent(save,'click',function(event){
->>>>>>> ff1fb1fbfd3e568fb2ae45832eacb489029f9057
                if(category && msg.value && money.value){
                    var edit_count=keyname.substring(0,keyname.indexOf(key2));
                    var now = new Date();
