@@ -26,11 +26,19 @@
     <div class="choose">
         <p>选择账目类型</p>
         <ul class="choose-img" id='choose'>
+<<<<<<< HEAD
             <li><img src="images/food.svg" alt='food' data-id='food'></li>
             <li><img src="images/dress.svg" alt='dress' data-id='dress'></li>
             <li><img src="images/transport.svg" alt='transport' data-id='transport'></li>
             <li><img src="images/shopping.svg" alt='shopping' data-id='shopping'></li>
             <li><img src="images/income.svg" alt='income' data-id='income'></li>
+=======
+            <li><img src="images/food.png" alt='food' data-id='food'></li>
+            <li><img src="images/dress.png" alt='dress' data-id='dress'></li>
+            <li><img src="images/transport.png" alt='transport' data-id='transport'></li>
+            <li><img src="images/shopping.png" alt='shopping' data-id='shopping'></li>
+            <li><img src="images/income.png" alt='income' data-id='income'></li>
+>>>>>>> ad42868634f52ec9346fa4da4df4b41dfe431d7b
         </ul>
     </div>
     <div class="project">
@@ -63,7 +71,11 @@
                     key2 = key.replace(/\d*/g,''),
                     colorClass = key2 == 'income'? "earn" : "cost" ,
                     symbol =  key2 == 'income'? '+':'-';
+<<<<<<< HEAD
                 html+='<div class="preview_img"><img src="images/'+key2+'.svg" id="preview_img"/></div>'+'<div class="preview_num '+colorClass+'" id="preview_num"><span>'+symbol+obj.money+'</span></div>'+'<div class="preview_msg" id="preview_msg">'+obj.msg+'</div>'+'<div class="preview_delete" id="preview_delete"><a href="#"><img src="images/delete3.png"/></a></div>';
+=======
+                html+='<div class="preview_img"><img src="images/'+key2+'.png" id="preview_img"/></div>'+'<div class="preview_num '+colorClass+'" id="preview_num"><span>'+symbol+obj.money+'</span></div>'+'<div class="preview_msg" id="preview_msg">'+obj.msg+'</div>'+'<div class="preview_delete" id="preview_delete"><a href="#"><img src="images/delete3.png"/></a></div>';
+>>>>>>> ad42868634f52ec9346fa4da4df4b41dfe431d7b
             }
         }
         preview.innerHTML=html;
@@ -110,7 +122,11 @@
                     }
                     var colorClass2= category=='income'?'earn' : 'cost',
                         symbol2 =  category == 'income'? '+':'-';
+<<<<<<< HEAD
                     util.$('preview_img').src='images/'+category+'.svg';
+=======
+                    util.$('preview_img').src='images/'+category+'.png';
+>>>>>>> ad42868634f52ec9346fa4da4df4b41dfe431d7b
                     preview_num.className = "preview_num "+colorClass2;
                     preview_num.innerHTML='<span>'+symbol2+money.value+'</span>';
                 }
@@ -145,7 +161,11 @@
                 util.preventEvent(event);
                 preview_num.innerHTML='<span>金额</span>';
                 preview_msg.innerHTML='事项';
+<<<<<<< HEAD
                 util.$('preview_img').src='images/preview.svg';
+=======
+                util.$('preview_img').src='images/preview3.png';
+>>>>>>> ad42868634f52ec9346fa4da4df4b41dfe431d7b
                 target_touch.className='';
                 msg.value='';
                 money.value='';

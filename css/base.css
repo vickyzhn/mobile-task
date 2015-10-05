@@ -3,7 +3,14 @@
 
 *{
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+<<<<<<< HEAD
     font-family: '微软雅黑';
+=======
+<<<<<<< HEAD
+    font-family: '微软雅黑';
+=======
+>>>>>>> f87c2ffc0051d9a52bb78c52dd76a207c2abe55c
+>>>>>>> ad42868634f52ec9346fa4da4df4b41dfe431d7b
 }
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, del, dfn, em, img, ins, kbd, q, samp, small, strong, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, footer, header, nav, section,button {
   margin:0;
