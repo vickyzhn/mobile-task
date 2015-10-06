@@ -63,11 +63,7 @@
                     key2 = key.replace(/\d*/g,''),
                     colorClass = key2 == 'income'? "earn" : "cost" ,
                     symbol =  key2 == 'income'? '+':'-';
-<<<<<<< HEAD
                 html+='<div class="preview_img"><img src="images/'+key2+'.svg" onerror="this.onerror=null; this.src=images/'+key2+'.png" id="preview_img"/></div>'+'<div class="preview_num '+colorClass+'" id="preview_num"><span>'+symbol+obj.money+'</span></div>'+'<div class="preview_msg" id="preview_msg">'+obj.msg+'</div>'+'<div class="preview_delete" id="preview_delete"><a href="#"><img src="images/delete3.png"/></a></div>';
-=======
-                html+='<div class="preview_img"><img src="images/'+key2+'.svg" id="preview_img"/></div>'+'<div class="preview_num '+colorClass+'" id="preview_num"><span>'+symbol+obj.money+'</span></div>'+'<div class="preview_msg" id="preview_msg">'+obj.msg+'</div>'+'<div class="preview_delete" id="preview_delete"><a href="#"><img src="images/delete3.png"/></a></div>';
->>>>>>> 744681116f145e925d6a475094fe27a535612b2e
             }
         }
         preview.innerHTML=html;
@@ -115,12 +111,9 @@
                     var colorClass2= category=='income'?'earn' : 'cost',
                         symbol2 =  category == 'income'? '+':'-';
                     util.$('preview_img').src='images/'+category+'.svg';
-<<<<<<< HEAD
                     if(!Modernizr.svg){
                         util.$('preview_img').src='images/'+category+'.png';
                     }
-=======
->>>>>>> 744681116f145e925d6a475094fe27a535612b2e
                     preview_num.className = "preview_num "+colorClass2;
                     preview_num.innerHTML='<span>'+symbol2+money.value+'</span>';
                 }
@@ -156,12 +149,9 @@
                 preview_num.innerHTML='<span>金额</span>';
                 preview_msg.innerHTML='事项';
                 util.$('preview_img').src='images/preview.svg';
-<<<<<<< HEAD
                 if(!Modernizr.svg){
                     util.$('preview_img').src='images/preview3.png';
                 }
-=======
->>>>>>> 744681116f145e925d6a475094fe27a535612b2e
                 target_touch.className='';
                 msg.value='';
                 money.value='';
