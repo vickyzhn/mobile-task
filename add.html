@@ -13,11 +13,7 @@
 
     <div class="preview">
         <div class="preview_img" >
-<<<<<<< HEAD
             <img src="images/preview.svg" id="preview_img"/>
-=======
-            <img src="images/preview3.png" id="preview_img"/>
->>>>>>> ad42868634f52ec9346fa4da4df4b41dfe431d7b
         </div>
         <div class="preview_num" id="preview_num" ><span>金额</span></div>
         <div class="preview_msg" id="preview_msg">事项</div>
@@ -29,19 +25,11 @@
     <div class="choose">
         <p>选择账目类型</p>
         <ul class="choose-img" id='choose'>
-<<<<<<< HEAD
-            <li><img src="images/food.svg" alt='food' data-id='food'></li>
-            <li><img src="images/dress.svg" alt='dress' data-id='dress'></li>
-            <li><img src="images/transport.svg" alt='transport' data-id='transport'></li>
-            <li><img src="images/shopping.svg" alt='shopping' data-id='shopping'></li>
-            <li><img src="images/income.svg" alt='income' data-id='income'></li>
-=======
-            <li><img src="images/food.png" alt='food' data-id='food'></li>
-            <li><img src="images/dress.png" alt='dress' data-id='dress'></li>
-            <li><img src="images/transport.png" alt='transport' data-id='transport'></li>
-            <li><img src="images/shopping.png" alt='shopping' data-id='shopping'></li>
-            <li><img src="images/income.png" alt='income' data-id='income'></li>
->>>>>>> ad42868634f52ec9346fa4da4df4b41dfe431d7b
+            <li><img src="images/food.svg" onerror="this.onerror=null; this.src=images/food.png" alt='food' data-id='food'></li>
+            <li><img src="images/dress.svg" onerror="this.onerror=null; this.src='images/dress.png'" alt='dress' data-id='dress'></li>
+            <li><img src="images/transport.svg" onerror="this.onerror=null; this.src='images/transport.png'" alt='transport' data-id='transport'></li>
+            <li><img src="images/shopping.svg" onerror="this.onerror=null; this.src='images/shopping.png'" alt='shopping' data-id='shopping'></li>
+            <li><img src="images/income.svg" onerror="this.onerror=null; this.src='images/income.png'" alt='income' data-id='income'></li>
         </ul>
     </div>
     <div class="project">
@@ -87,11 +75,10 @@
                         target_touch.className='choose_img';
                         target_in = target_touch;
                     }
-<<<<<<< HEAD
                     util.$('preview_img').src='images/'+category+'.svg';
-=======
-                    util.$('preview_img').src='images/'+category+'.png';
->>>>>>> ad42868634f52ec9346fa4da4df4b41dfe431d7b
+                    if(!Modernizr.svg){
+                        util.$('preview_img').src='images/'+category+'.png';
+                    }
                     if(money.value)//确保后期输入账目金额后改动账目类型时，‘+’‘-’号与账目类型同步
                     {
                         var colorClass2= category=='income'?'earn' : 'cost',
@@ -125,7 +112,7 @@
                 }
             }
         
-        //删除
+        //清空
             var preview_delete=util.$('preview_delete');
         //$('#preview_delete').tap(function(event){
             util.addEvent(preview_delete,'touchstart',function(event){
@@ -133,11 +120,10 @@
                 util.preventEvent(event);
                 preview_num.innerHTML='<span>金额</span>';
                 preview_msg.innerHTML='事项';
-<<<<<<< HEAD
-                util.$('preview_img').src='images/preview3.svg';
-=======
-                util.$('preview_img').src='images/preview3.png';
->>>>>>> ad42868634f52ec9346fa4da4df4b41dfe431d7b
+                util.$('preview_img').src='images/preview.svg';
+                if(!Modernizr.svg){
+                    util.$('preview_img').src='images/preview3.png';
+                }
                 target_touch.className='';
                 target_touch=null;
                 msg.value='';

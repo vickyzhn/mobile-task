@@ -78,12 +78,10 @@
         float: left;
         cursor: pointer;
     }
-<<<<<<< HEAD
     .choose-img li img {
         max-height: 100%;
     }
-=======
->>>>>>> ad42868634f52ec9346fa4da4df4b41dfe431d7b
+
     .project{
         width: 100%;
         position: relative;
@@ -138,12 +136,10 @@
     float:left;
     margin:12px 0 22px 7%;
 }
-<<<<<<< HEAD
 .preview_img img {
     max-width: 100%;
 }
-=======
->>>>>>> ad42868634f52ec9346fa4da4df4b41dfe431d7b
+
 .preview_num{
     width:24.4%;
     height:50px;
