@@ -20,11 +20,7 @@
             var key2 = key.replace(/\d*/g, "");
             var colorClass = key2 == 'income'? "earn" : "cost" ;
             var symbol =  key2 == 'income'? '+':'-';
-<<<<<<< HEAD
             html += '<div id="list_wrap'+list_count+'">'+'<div id="date_wrap'+list_count+'" class="date_wrap"><div class="date">'+save_date+'</div></div><div id="list_con'+list_count+'" class="list_con"><div class="list_img"><span class="icon-'+key2+'"></span></div>'
-=======
-            html += '<div id="list_wrap'+list_count+'">'+'<div id="date_wrap'+list_count+'" class="date_wrap"><div class="date">'+save_date+'</div></div><div id="list_con'+list_count+'" class="list_con"><div class="list_img"><img src="images/'+key2+'.svg" onerror="this.onerror=null; this.src=images/'+key2+'.png"/></div>'
->>>>>>> c81843da0d976f15aa6a5cd66829e32aa54319fe
                  + '<div class="list_num '+ colorClass +'">' + symbol + obj.money + '</div>'
                  + '<div class="list_msg">'+ obj.msg +'</div>'
                  +'<div class="list_next"><span class="icon-next"></span></div>'+ '<div class="edit" id="list_edit'+list_count+'"><a href="#"><img src="images/edit2.png"/></a></div>'+'<div class="delete" id="list_delete'+list_count+'"><a href="#"><img src="images/delete2.png"/></a></div>'+'</div>'+'</div>';
