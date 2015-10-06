@@ -25,19 +25,11 @@
     <div class="choose">
         <p>选择账目类型</p>
         <ul class="choose-img" id='choose'>
-<<<<<<< HEAD
             <li><img src="images/food.svg" onerror="this.onerror=null; this.src=images/food.png" alt='food' data-id='food'></li>
             <li><img src="images/dress.svg" onerror="this.onerror=null; this.src='images/dress.png'" alt='dress' data-id='dress'></li>
             <li><img src="images/transport.svg" onerror="this.onerror=null; this.src='images/transport.png'" alt='transport' data-id='transport'></li>
             <li><img src="images/shopping.svg" onerror="this.onerror=null; this.src='images/shopping.png'" alt='shopping' data-id='shopping'></li>
             <li><img src="images/income.svg" onerror="this.onerror=null; this.src='images/income.png'" alt='income' data-id='income'></li>
-=======
-            <li><img src="images/food.svg" alt='food' data-id='food'></li>
-            <li><img src="images/dress.svg" alt='dress' data-id='dress'></li>
-            <li><img src="images/transport.svg" alt='transport' data-id='transport'></li>
-            <li><img src="images/shopping.svg" alt='shopping' data-id='shopping'></li>
-            <li><img src="images/income.svg" alt='income' data-id='income'></li>
->>>>>>> 744681116f145e925d6a475094fe27a535612b2e
         </ul>
     </div>
     <div class="project">
@@ -84,13 +76,9 @@
                         target_in = target_touch;
                     }
                     util.$('preview_img').src='images/'+category+'.svg';
-<<<<<<< HEAD
                     if(!Modernizr.svg){
                         util.$('preview_img').src='images/'+category+'.png';
                     }
-=======
-
->>>>>>> 744681116f145e925d6a475094fe27a535612b2e
                     if(money.value)//确保后期输入账目金额后改动账目类型时，‘+’‘-’号与账目类型同步
                     {
                         var colorClass2= category=='income'?'earn' : 'cost',
@@ -133,12 +121,9 @@
                 preview_num.innerHTML='<span>金额</span>';
                 preview_msg.innerHTML='事项';
                 util.$('preview_img').src='images/preview.svg';
-<<<<<<< HEAD
                 if(!Modernizr.svg){
                     util.$('preview_img').src='images/preview3.png';
                 }
-=======
->>>>>>> 744681116f145e925d6a475094fe27a535612b2e
                 target_touch.className='';
                 target_touch=null;
                 msg.value='';
