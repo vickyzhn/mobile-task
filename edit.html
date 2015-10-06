@@ -14,7 +14,7 @@
     <div class="preview" id="preview">
         <!--
         <div class="preview_img" >
-            <img src="images/preview3.png" id="preview_img"/>
+            <span class="icon-preview"></span>
         </div>
         <div class="preview_num cost" id="preview_num" ><span>金额</span></div>
         <div class="preview_msg" id="preview_msg">事项</div>
@@ -26,11 +26,34 @@
     <div class="choose">
         <p>选择账目类型</p>
         <ul class="choose-img" id='choose'>
+            <li>
+                <span class="icon-food" data-id="food"></span>
+                <font>饮食</font>
+            </li>
+            <li>
+                <span class="icon-dress" data-id="dress"></span>
+                <font>衣服</font>
+            </li>
+            <li>
+                <span class="icon-transport" data-id="transport"></span>
+                <font>交通</font>
+            </li>
+            <li>
+                <span class="icon-shopping" data-id="shopping"></span>
+                <font>购物</font>
+            </li>
+            <li>
+                <span class="icon-income" data-id="income"></span>
+                <font>收入</font>
+            </li>
+            
+            <!--
             <li><img src="images/food.svg" alt='food' data-id='food'></li>
             <li><img src="images/dress.svg" alt='dress' data-id='dress'></li>
             <li><img src="images/transport.svg" alt='transport' data-id='transport'></li>
             <li><img src="images/shopping.svg" alt='shopping' data-id='shopping'></li>
             <li><img src="images/income.svg" alt='income' data-id='income'></li>
+            !-->
         </ul>
     </div>
     <div class="project">
@@ -63,11 +86,7 @@
                     key2 = key.replace(/\d*/g,''),
                     colorClass = key2 == 'income'? "earn" : "cost" ,
                     symbol =  key2 == 'income'? '+':'-';
-<<<<<<< HEAD
-                html+='<div class="preview_img"><img src="images/'+key2+'.svg" onerror="this.onerror=null; this.src=images/'+key2+'.png" id="preview_img"/></div>'+'<div class="preview_num '+colorClass+'" id="preview_num"><span>'+symbol+obj.money+'</span></div>'+'<div class="preview_msg" id="preview_msg">'+obj.msg+'</div>'+'<div class="preview_delete" id="preview_delete"><a href="#"><img src="images/delete3.png"/></a></div>';
-=======
-                html+='<div class="preview_img"><img src="images/'+key2+'.svg" id="preview_img"/></div>'+'<div class="preview_num '+colorClass+'" id="preview_num"><span>'+symbol+obj.money+'</span></div>'+'<div class="preview_msg" id="preview_msg">'+obj.msg+'</div>'+'<div class="preview_delete" id="preview_delete"><a href="#"><img src="images/delete3.png"/></a></div>';
->>>>>>> 744681116f145e925d6a475094fe27a535612b2e
+                html+='<div class="preview_img">'+'<span class="icon-'+key2+'" id="preview_img"></span>'+'</div>'+'<div class="preview_num '+colorClass+'" id="preview_num"><span>'+symbol+obj.money+'</span></div>'+'<div class="preview_msg" id="preview_msg">'+obj.msg+'</div>'+'<div class="preview_delete" id="preview_delete"><a href="#" class="icon-cancel"></a></div>';
             }
         }
         preview.innerHTML=html;
@@ -83,12 +102,12 @@
             var target_touch = '';
         
         //自动填充
-        var imgs = choose.getElementsByTagName('img');
+        var imgs = choose.getElementsByTagName('span');
         for(var j=0;j<imgs.length;j++){
             if(imgs[j].dataset.id==key2){
                 category = key2;
                 var target_in=imgs[j];
-                imgs[j].className='choose_img';
+                imgs[j].className+=' choose_img';
                 target_touch=imgs[j];
             }
         }
@@ -104,23 +123,17 @@
                 if(target_touch.parentNode.parentNode==choose){
                     if(!category){
                         category = target_touch.dataset.id;
-                        target_touch.className='choose_img';
+                        target_touch.className+=' choose_img';
                         target_in = target_touch;
                     }else{
-                        target_in.className='';
+                        target_in.className=target_in.className.replace('choose_img','');
                         category=target_touch.dataset.id;
-                        target_touch.className='choose_img';
+                        target_touch.className+=' choose_img';
                         target_in = target_touch;
                     }
                     var colorClass2= category=='income'?'earn' : 'cost',
                         symbol2 =  category == 'income'? '+':'-';
-                    util.$('preview_img').src='images/'+category+'.svg';
-<<<<<<< HEAD
-                    if(!Modernizr.svg){
-                        util.$('preview_img').src='images/'+category+'.png';
-                    }
-=======
->>>>>>> 744681116f145e925d6a475094fe27a535612b2e
+                    util.$('preview_img').className='icon-'+category;
                     preview_num.className = "preview_num "+colorClass2;
                     preview_num.innerHTML='<span>'+symbol2+money.value+'</span>';
                 }
@@ -155,14 +168,8 @@
                 util.preventEvent(event);
                 preview_num.innerHTML='<span>金额</span>';
                 preview_msg.innerHTML='事项';
-                util.$('preview_img').src='images/preview.svg';
-<<<<<<< HEAD
-                if(!Modernizr.svg){
-                    util.$('preview_img').src='images/preview3.png';
-                }
-=======
->>>>>>> 744681116f145e925d6a475094fe27a535612b2e
-                target_touch.className='';
+                util.$('preview_img').className='icon-preview';
+                target_touch.className=target_touch.className.replace('choose_img','');
                 msg.value='';
                 money.value='';
                 

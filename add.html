@@ -13,31 +13,46 @@
 
     <div class="preview">
         <div class="preview_img" >
-            <img src="images/preview.svg" id="preview_img"/>
+            <span class="icon-preview" id="preview_img"></span>
         </div>
         <div class="preview_num" id="preview_num" ><span>金额</span></div>
         <div class="preview_msg" id="preview_msg">事项</div>
         <div class="preview_delete" id="preview_delete">
-            <a href="#"><img src="images/delete3.png"/></a>
+            <a href="#" class="icon-cancel"></a>
         </div>   
     </div>
     
     <div class="choose">
         <p>选择账目类型</p>
         <ul class="choose-img" id='choose'>
-<<<<<<< HEAD
-            <li><img src="images/food.svg" onerror="this.onerror=null; this.src=images/food.png" alt='food' data-id='food'></li>
-            <li><img src="images/dress.svg" onerror="this.onerror=null; this.src='images/dress.png'" alt='dress' data-id='dress'></li>
-            <li><img src="images/transport.svg" onerror="this.onerror=null; this.src='images/transport.png'" alt='transport' data-id='transport'></li>
-            <li><img src="images/shopping.svg" onerror="this.onerror=null; this.src='images/shopping.png'" alt='shopping' data-id='shopping'></li>
-            <li><img src="images/income.svg" onerror="this.onerror=null; this.src='images/income.png'" alt='income' data-id='income'></li>
-=======
+            <li>
+                <span class="icon-food" data-id="food"></span>
+                <font>饮食</font>
+            </li>
+            <li>
+                <span class="icon-dress" data-id="dress"></span>
+                <font>衣服</font>
+            </li>
+            <li>
+                <span class="icon-transport" data-id="transport"></span>
+                <font>交通</font>
+            </li>
+            <li>
+                <span class="icon-shopping" data-id="shopping"></span>
+                <font>购物</font>
+            </li>
+            <li>
+                <span class="icon-income" data-id="income"></span>
+                <font>收入</font>
+            </li>
+            
+            <!--
             <li><img src="images/food.svg" alt='food' data-id='food'></li>
             <li><img src="images/dress.svg" alt='dress' data-id='dress'></li>
             <li><img src="images/transport.svg" alt='transport' data-id='transport'></li>
             <li><img src="images/shopping.svg" alt='shopping' data-id='shopping'></li>
             <li><img src="images/income.svg" alt='income' data-id='income'></li>
->>>>>>> 744681116f145e925d6a475094fe27a535612b2e
+            !-->
         </ul>
     </div>
     <div class="project">
@@ -75,22 +90,17 @@
                     if(!category)//第一次选择时
                     {
                         category = target_touch.dataset.id;
-                        target_touch.className='choose_img';
+                        target_touch.className+=' choose_img';
                         target_in = target_touch;
                     }else{
-                        target_in.className='';
+                        console.log(target_in.className);
+                        target_in.className=target_in.className.replace('choose_img','');
                         category=target_touch.dataset.id;
-                        target_touch.className='choose_img';
+                        target_touch.className+=' choose_img';
                         target_in = target_touch;
                     }
-                    util.$('preview_img').src='images/'+category+'.svg';
-<<<<<<< HEAD
-                    if(!Modernizr.svg){
-                        util.$('preview_img').src='images/'+category+'.png';
-                    }
-=======
+                    util.$('preview_img').className='icon-'+category;
 
->>>>>>> 744681116f145e925d6a475094fe27a535612b2e
                     if(money.value)//确保后期输入账目金额后改动账目类型时，‘+’‘-’号与账目类型同步
                     {
                         var colorClass2= category=='income'?'earn' : 'cost',
@@ -132,14 +142,8 @@
                 util.preventEvent(event);
                 preview_num.innerHTML='<span>金额</span>';
                 preview_msg.innerHTML='事项';
-                util.$('preview_img').src='images/preview.svg';
-<<<<<<< HEAD
-                if(!Modernizr.svg){
-                    util.$('preview_img').src='images/preview3.png';
-                }
-=======
->>>>>>> 744681116f145e925d6a475094fe27a535612b2e
-                target_touch.className='';
+                util.$('preview_img').className='icon-preview';
+                target_touch.className=target_touch.className.replace('choose_img','');
                 target_touch=null;
                 msg.value='';
                 money.value='';
