@@ -25,6 +25,7 @@
     <div class="choose">
         <p>选择账目类型</p>
         <ul class="choose-img" id='choose'>
+<<<<<<< HEAD
             <li>
                 <span class="icon-food" data-id="food"></span>
                 <font>饮食</font>
@@ -53,6 +54,13 @@
             <li><img src="images/shopping.svg" alt='shopping' data-id='shopping'></li>
             <li><img src="images/income.svg" alt='income' data-id='income'></li>
             !-->
+=======
+            <li><img src="images/food.svg" onerror="this.onerror=null; this.src=images/food.png" alt='food' data-id='food'></li>
+            <li><img src="images/dress.svg" onerror="this.onerror=null; this.src='images/dress.png'" alt='dress' data-id='dress'></li>
+            <li><img src="images/transport.svg" onerror="this.onerror=null; this.src='images/transport.png'" alt='transport' data-id='transport'></li>
+            <li><img src="images/shopping.svg" onerror="this.onerror=null; this.src='images/shopping.png'" alt='shopping' data-id='shopping'></li>
+            <li><img src="images/income.svg" onerror="this.onerror=null; this.src='images/income.png'" alt='income' data-id='income'></li>
+>>>>>>> c81843da0d976f15aa6a5cd66829e32aa54319fe
         </ul>
     </div>
     <div class="project">
@@ -99,8 +107,15 @@
                         target_touch.className+=' choose_img';
                         target_in = target_touch;
                     }
+<<<<<<< HEAD
                     util.$('preview_img').className='icon-'+category;
 
+=======
+                    util.$('preview_img').src='images/'+category+'.svg';
+                    if(!Modernizr.svg){
+                        util.$('preview_img').src='images/'+category+'.png';
+                    }
+>>>>>>> c81843da0d976f15aa6a5cd66829e32aa54319fe
                     if(money.value)//确保后期输入账目金额后改动账目类型时，‘+’‘-’号与账目类型同步
                     {
                         var colorClass2= category=='income'?'earn' : 'cost',
@@ -142,8 +157,16 @@
                 util.preventEvent(event);
                 preview_num.innerHTML='<span>金额</span>';
                 preview_msg.innerHTML='事项';
+<<<<<<< HEAD
                 util.$('preview_img').className='icon-preview';
                 target_touch.className=target_touch.className.replace('choose_img','');
+=======
+                util.$('preview_img').src='images/preview.svg';
+                if(!Modernizr.svg){
+                    util.$('preview_img').src='images/preview3.png';
+                }
+                target_touch.className='';
+>>>>>>> c81843da0d976f15aa6a5cd66829e32aa54319fe
                 target_touch=null;
                 msg.value='';
                 money.value='';

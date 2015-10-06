@@ -86,7 +86,11 @@
                     key2 = key.replace(/\d*/g,''),
                     colorClass = key2 == 'income'? "earn" : "cost" ,
                     symbol =  key2 == 'income'? '+':'-';
+<<<<<<< HEAD
                 html+='<div class="preview_img">'+'<span class="icon-'+key2+'" id="preview_img"></span>'+'</div>'+'<div class="preview_num '+colorClass+'" id="preview_num"><span>'+symbol+obj.money+'</span></div>'+'<div class="preview_msg" id="preview_msg">'+obj.msg+'</div>'+'<div class="preview_delete" id="preview_delete"><a href="#" class="icon-cancel"></a></div>';
+=======
+                html+='<div class="preview_img"><img src="images/'+key2+'.svg" onerror="this.onerror=null; this.src=images/'+key2+'.png" id="preview_img"/></div>'+'<div class="preview_num '+colorClass+'" id="preview_num"><span>'+symbol+obj.money+'</span></div>'+'<div class="preview_msg" id="preview_msg">'+obj.msg+'</div>'+'<div class="preview_delete" id="preview_delete"><a href="#"><img src="images/delete3.png"/></a></div>';
+>>>>>>> c81843da0d976f15aa6a5cd66829e32aa54319fe
             }
         }
         preview.innerHTML=html;
@@ -133,7 +137,14 @@
                     }
                     var colorClass2= category=='income'?'earn' : 'cost',
                         symbol2 =  category == 'income'? '+':'-';
+<<<<<<< HEAD
                     util.$('preview_img').className='icon-'+category;
+=======
+                    util.$('preview_img').src='images/'+category+'.svg';
+                    if(!Modernizr.svg){
+                        util.$('preview_img').src='images/'+category+'.png';
+                    }
+>>>>>>> c81843da0d976f15aa6a5cd66829e32aa54319fe
                     preview_num.className = "preview_num "+colorClass2;
                     preview_num.innerHTML='<span>'+symbol2+money.value+'</span>';
                 }
@@ -168,8 +179,16 @@
                 util.preventEvent(event);
                 preview_num.innerHTML='<span>金额</span>';
                 preview_msg.innerHTML='事项';
+<<<<<<< HEAD
                 util.$('preview_img').className='icon-preview';
                 target_touch.className=target_touch.className.replace('choose_img','');
+=======
+                util.$('preview_img').src='images/preview.svg';
+                if(!Modernizr.svg){
+                    util.$('preview_img').src='images/preview3.png';
+                }
+                target_touch.className='';
+>>>>>>> c81843da0d976f15aa6a5cd66829e32aa54319fe
                 msg.value='';
                 money.value='';
                 
