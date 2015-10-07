@@ -20,11 +20,7 @@
             var key2 = key.replace(/\d*/g, "");
             var colorClass = key2 == 'income'? "earn" : "cost" ;
             var symbol =  key2 == 'income'? '+':'-';
-<<<<<<< HEAD
             html += '<div class="list_wrap"><div id="date_wrap'+list_count+'" class="date_wrap"><div class="date">'+save_date+'</div></div><div id="list_con'+list_count+'" class="list_con"><div class="list_img"><span class="icon-'+key2+'"></span></div>'
-=======
-            html += '<div id="list_wrap'+list_count+'">'+'<div id="date_wrap'+list_count+'" class="date_wrap"><div class="date">'+save_date+'</div></div><div id="list_con'+list_count+'" class="list_con"><div class="list_img"><span class="icon-'+key2+'"></span></div>'
->>>>>>> 831735d4685cfb379d0fa14b5ff44efec611411c
                  + '<div class="list_num '+ colorClass +'">' + symbol + obj.money + '</div>'
                  + '<div class="list_msg">'+ obj.msg +'</div>'
                  +'<div id="list_next'+list_count+'" class="list_next"><span class="icon-next"></span></div></div>'
@@ -43,8 +39,9 @@
         list_delete[m] = util.$("list_delete"+m);
         list_edit[m] = util.$("list_edit"+m);
         
-        //向左滑动
+        //滑动
         (function(m){
+            //向左滑动
             $("#list_con"+m).swipeLeft(function(){
                 this.className = 'list_con translate_in';
                 list_edit[m].className += ' change_in';
@@ -60,6 +57,7 @@
                 });
                 */
             });
+            //向右滑动
             $("#list_con"+m).swipeRight(function(){
                 list_con[m].className = 'list_con';
                 list_edit[m].className = 'list_change icon-edit';
