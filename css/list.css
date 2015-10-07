@@ -138,48 +138,6 @@ a {
     color: #4ba9ff; }
 
 /*滑动出现的修改删除部分*/
-.edit {
-  width: 69px;
-  height: 70px;
-  float: right;
-  margin-right: -109px;
-  border-bottom: 1px solid #7ecef4; }
-
-.delete {
-  width: 69px;
-  height: 70px;
-  float: right;
-  margin-right: -178px;
-  border-bottom: 1px solid #7ecef4; }
-
-.edit a, .delete a {
-  display: block;
-  font-size: 0; }
-
-/*
-.list_con>span {
-    width: 70px;
-    height: 70px;
-    display: block;
-    position: absolute;
-    background: #fb6960;
-    font-size: 24px;
-    color: #fff;
-    line-height: 70px;
-    text-align: center;
-}
-@import 'mixin.scss';
-.icon-edit {
-    right: -70px;
-}
-.icon-delete {
-    right: -140px;
-}
-.translate_in {
-    @include translate3D(-140px,0,0);
-    overflow: visible;
-}
-*/
 .list_change {
   width: 70px;
   height: 47px;
@@ -310,8 +268,6 @@ a {
 .icon-preview {
   background: #80c1fd; }
 
-<<<<<<< HEAD
-/*# sourceMappingURL=list.css.map */
-=======
 
->>>>>>> 831735d4685cfb379d0fa14b5ff44efec611411c
+/*# sourceMappingURL=list.css.map */
+
