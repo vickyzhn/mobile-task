@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
-<title>一键办理</title>
-<link href="css/base.css" type="text/css" rel="stylesheet">
+<title>账目修改</title>
+<link href="css/common.css" type="text/css" rel="stylesheet">
 <link href="css/addlv.css" type="text/css" rel="stylesheet">
 </head>
 <body class="body">
@@ -99,8 +99,8 @@
         
         
         //选择账目事件
-        //$('#choose').tap(function(event){
-            util.addEvent(choose,'touchstart',function(event){
+        $('#choose').tap(function(event){
+            //util.addEvent(choose,'touchstart',function(event){
                 var e = util.getEvent(event);
                 target_touch = util.getTarget(e);
                 if(target_touch.parentNode.parentNode==choose){
@@ -144,9 +144,9 @@
             }
         
         //清空
-            var preview_delete=util.$('preview_delete');
-        //$('#preview_delete').tap(function(event){
-            util.addEvent(preview_delete,'touchstart',function(event){
+        var preview_delete=util.$('preview_delete');
+        $('#preview_delete').tap(function(event){
+            //util.addEvent(preview_delete,'touchstart',function(event){
                 event=util.getEvent(event);
                 util.preventEvent(event);
                 preview_num.innerHTML='<span>金额</span>';
@@ -155,13 +155,12 @@
                 target_touch.className=target_touch.className.replace('choose_img','');
                 msg.value='';
                 money.value='';
-                
             });
                     
         
         //保存
-        //$('#save').tap(function(){
-            util.addEvent(save,'click',function(event){
+        $('#save').tap(function(){
+            //util.addEvent(save,'click',function(event){
                if(category && msg.value && money.value){
                    var edit_count=keyname.substring(0,keyname.indexOf(key2));
                    var now = new Date();

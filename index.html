@@ -6,13 +6,20 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>账目列表</title>
+    <link rel="stylesheet" href="css/common.css"/>
     <link rel="stylesheet" href="css/list.css"/>
 </head>
 <body>
     <div id="header">
-        <div class="header_txt list"><a href="index.html">账目列表</a></div>
-        <div class="header_txt review"><a href="test.html">账目统计</a></div>
+        记账本
+        <a href="#" class="icon-menudown" id="header_menu"></a>
+        <a href="add.html" class="icon-add"></a>
+        <ul class="menu">
+            <li><a href="#" class="current">账目列表</a></li>
+            <li><a href="test.html">账目统计</a></li>
+        </ul>
     </div>
+
     
     <div id="list_item">
         <!--
@@ -35,12 +42,13 @@
         <span id="list_delete'+1+'" class="list_change icon-delete"></span>
         </div>
         !-->
+        <!--
+        <div class="notext">
+            <p>目前还木有账单呢！现在开始来记一笔把！</p>
+            <div><a href="add.html" class="btn-add">记一笔</a><div>
+        </div>
+        !-->
     </div>
-    
-    <div id="add_item">
-        <a href="add.html">记一笔</a>
-    </div>
-    
 
     <script src='js/zepto.min.js'></script>
     <script src='js/util.js'></script>

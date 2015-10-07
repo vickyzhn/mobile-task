@@ -1,9 +1,9 @@
-@mixin translate3D($x,$y,$z) {
-	-webkit-transform: translate3D($x,$y,$z);
-	-moz-transform: translate3D($x,$y,$z);
-	-ms-transform: translate3D($x,$y,$z);
-	-o-transform: translate3D($x,$y,$z);
-	transform: translate3D($x,$y,$z);
+@mixin translate3d($x,$y,$z) {
+	-webkit-transform: translate3d($x,$y,$z);
+	-moz-transform: translate3d($x,$y,$z);
+	-ms-transform: translate3d($x,$y,$z);
+	-o-transform: translate3d($x,$y,$z);
+	transform: translate3d($x,$y,$z);
 }
 @mixin opacity($opacity) {
 	opacity: $opacity;
@@ -15,4 +15,18 @@
 	-ms-transform: scale($scale);
 	-o-transform: scale($scale);
 	transform: scale($scale);
+}
+@mixin transform-origin($origin){
+	-webkit-transform-origin: $origin;
+	-moz-transform-origin: $origin;
+	-ms-transform-origin: $origin;
+	-o-transform-origin: $origin;
+	transform-origin: $origin;
+}
+@mixin transition($transition){
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-ms-transition: $transition;
+	-o-transition: $transition;
+	transition: $transition;
 }

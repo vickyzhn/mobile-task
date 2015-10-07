@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+/*reset*/
+/*清除内外边距*/
+body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol,
+li, dl, dt, dd, form, a, fieldset, input, th, td {
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: none;
+}
+/*重置box-sizing*/
+div {
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+/*重置字体*/
+body {
+    font-family: "微软雅黑";
+    font-size: 16px;
+    background:#fff;
+    padding-bottom: 45px;
+    -webkit-user-select: none; /*禁止选择文字*/
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/*重置文本格式元素&去除元素被点击时产生的边框或灰色遮罩*/
+a{ 
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+}
+ul,li {
+    list-style: none;
+}
+
+/*字体图标部分*/
+@font-face {
+  font-family: 'icomoon';
+  src: url("fonts/icomoon.eot?hyspqs");
+  src: url("fonts/icomoon.eot?hyspqs#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf?hyspqs") format("truetype"), url("fonts/icomoon.woff?hyspqs") format("woff"), url("fonts/icomoon.svg?hyspqs#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-edit:before {
+  content: "\e807"; }
+
+.icon-add:before {
+  content: "\e80a"; }
+
+.icon-shopping:before {
+  content: "\e802"; }
+
+.icon-food:before {
+  content: "\e803"; }
+
+.icon-delete:before {
+  content: "\e804"; }
+
+.icon-transport:before {
+  content: "\e805"; }
+
+.icon-dress:before {
+  content: "\e806"; }
+
+.icon-menudown:before {
+  content: "\e80b"; }
+
+.icon-menuup:before {
+  content: "\e80c"; }
+
+.icon-preview:before {
+  content: "\e800"; }
+
+.icon-cancel:before {
+  content: "\e801"; }
+
+.icon-next:before {
+  content: "\e808"; }
+
+.icon-income:before {
+  content: "\e809"; }
