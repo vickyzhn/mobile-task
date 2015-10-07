@@ -48,11 +48,7 @@
         list_delete[m] = util.$("list_delete"+m);
         list_edit[m] = util.$("list_edit"+m);
         
-<<<<<<< HEAD
         //滑动效果
-=======
-        //滑动
->>>>>>> 5597694164eb32decc9f5033e42cfeca54b5bf64
         (function(m){
             //向左滑动
             $("#list_con"+m).swipeLeft(function(){
