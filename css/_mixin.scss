@@ -7,7 +7,7 @@
 }
 @mixin opacity($opacity) {
 	opacity: $opacity;
-	fillter: alpha(opacity=$opacity * 100);
+	filter: alpha(opacity=$opacity * 100);
 }
 @mixin scale($scale){
 	-webkit-transform: scale($scale);
