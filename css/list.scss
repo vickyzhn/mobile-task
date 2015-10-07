@@ -63,15 +63,21 @@ a{
 #list_item{
     width:100%;
 }
+.list_wrap {
+    height: 100px;
+    position: relative;
+}
 .date_wrap{
     width:100%;
     height:30px;
     background:-webkit-linear-gradient(left,#57e1bf,#0084ff);
     background:-moz-linear-gradient(left,#57e1bf,#0084ff);
     padding-right: 2%;
+    position: relative;
 }
 .date{
-    float:right;
+    position: absolute;
+    right: 2%;
     color:#fff;
     font-size: 14px;
     line-height:30px;
@@ -80,10 +86,14 @@ a{
 .list_con{
     width:100%;
     height:70px;
-    overflow:hidden;
-    position:relative;
+    background: #fff;
+    position:absolute;
+    z-index: 2;
     left:0;
+    overflow: hidden;
     border-bottom: 1px solid #7ecef4;
+    -webkit-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
 }
 .list_img{
     width:50px;
@@ -130,7 +140,7 @@ a{
     }
 }
 
-/*以下为增加部分*/
+/*滑动出现的修改删除部分*/
 .edit{
     width:69px;
     height:70px;
@@ -150,6 +160,58 @@ a{
     display:block;
     font-size:0;
 }
+/*
+.list_con>span {
+    width: 70px;
+    height: 70px;
+    display: block;
+    position: absolute;
+    background: #fb6960;
+    font-size: 24px;
+    color: #fff;
+    line-height: 70px;
+    text-align: center;
+}
+@import 'mixin.scss';
+.icon-edit {
+    right: -70px;
+}
+.icon-delete {
+    right: -140px;
+}
+.translate_in {
+    @include translate3D(-140px,0,0);
+    overflow: visible;
+}
+*/
+@import 'mixin.scss';
+.list_change {
+    width: 70px;
+    height: 47px;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    background: #fb6960;
+    font-size: 24px;
+    color: #fff;
+    padding-top: 23px;
+    text-align: center;
+    @include opacity(0.5);
+    transition: opacity 0.5s ease-in;
+}
+.icon-edit {
+    right: 70px;
+}
+.icon-delete {
+    right: 0;
+}
+.translate_in {
+    @include translate3D(-140px,0,0);
+}
+.change_in {
+    @include opacity(1);
+}
+
         
 /*add_item*/
 #add_item{

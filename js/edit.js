@@ -20,16 +20,12 @@
             var key2 = key.replace(/\d*/g, "");
             var colorClass = key2 == 'income'? "earn" : "cost" ;
             var symbol =  key2 == 'income'? '+':'-';
-<<<<<<< HEAD
-            html += '<div id="list_wrap'+list_count+'">'+'<div id="date_wrap'+list_count+'" class="date_wrap"><div class="date">'+save_date+'</div></div><div id="list_con'+list_count+'" class="list_con"><div class="list_img"><span class="icon-'+key2+'"></span></div>'
-=======
-            html += '<div id="list_wrap'+list_count+'">'+'<div id="date_wrap'+list_count+'" class="date_wrap"><div class="date">'+save_date+'</div></div><div id="list_con'+list_count+'" class="list_con"><div class="list_img"><img src="images/'+key2+'.svg" onerror="this.onerror=null; this.src=images/'+key2+'.png"/></div>'
->>>>>>> c81843da0d976f15aa6a5cd66829e32aa54319fe
+            html += '<div class="list_wrap"><div id="date_wrap'+list_count+'" class="date_wrap"><div class="date">'+save_date+'</div></div><div id="list_con'+list_count+'" class="list_con"><div class="list_img"><span class="icon-'+key2+'"></span></div>'
                  + '<div class="list_num '+ colorClass +'">' + symbol + obj.money + '</div>'
                  + '<div class="list_msg">'+ obj.msg +'</div>'
-                 +'<div class="list_next"><span class="icon-next"></span></div>'+ '<div class="edit" id="list_edit'+list_count+'"><a href="#"><img src="images/edit2.png"/></a></div>'+'<div class="delete" id="list_delete'+list_count+'"><a href="#"><img src="images/delete2.png"/></a></div>'+'</div>'+'</div>';
-              list_count++;
-            
+                 +'<div id="list_next'+list_count+'" class="list_next"><span class="icon-next"></span></div></div>'
+                 +'<span id="list_edit'+list_count+'" class="list_change icon-edit"></span><span id="list_delete'+list_count+'" class="list_change icon-delete"></span></div>';
+            list_count++;
         }
     }
     items.innerHTML = html;
@@ -46,17 +42,32 @@
         //向左滑动
         (function(m){
             $("#list_con"+m).swipeLeft(function(){
-                if(this.style.overflow=='visible'){
-                    this.style.overflow='hidden';
-                    this.style.left=0;
-                }else{
-                    this.style.overflow='visible';
-                    this.style.left='-138px';
-                }
+                this.className = 'list_con translate_in';
+                list_edit[m].className += ' change_in';
+                list_delete[m].className += ' change_in';
+                //按下其他地方，滑动效果复原
+                /*
                 util.addEvent(document,'touchstart',function(){
-                    list_con[m].style.overflow='hidden';
-                    list_con[m].style.left=0;
+                    //list_con[m].className = list_con[m].className.replace(' translate_in','');
+                    //list_con[m].style.overflow ='hidden';
+                    list_con[m].className = 'list_con';
+                    list_edit[m].className = 'list_change icon-edit';
+                    list_delete[m].className = 'list_change icon-delete';
                 });
+                */
+            });
+            $("#list_con"+m).swipeRight(function(){
+                list_con[m].className = 'list_con';
+                list_edit[m].className = 'list_change icon-edit';
+                list_delete[m].className = 'list_change icon-delete';
+            });
+        })(m);
+        //按下“向左按钮”实现向左滑动效果
+        (function(m){
+            $("#list_next"+m).tap(function(){
+                this.parentNode.className = 'list_con translate_in';
+                list_edit[m].className += ' change_in';
+                list_delete[m].className += ' change_in';
             });
         })(m);
         
@@ -67,15 +78,12 @@
             util.preventEvent(event);
             util.stopEvent(event);
             var target = util.getTarget(event);
-            for(var n=0;n<4;n++){
-                target=target.parentNode;
-            }
-            
+            //获取list_wrap节点
+            target=target.parentNode;
             var keyname = key_name[m];
-            console.log(keyname);
             localStorage.removeItem(keyname);
-            console.log(localStorage.count);
             target.innerHTML=" ";
+            items.removeChild(target);
         });
         })(m);
         
@@ -85,40 +93,10 @@
                 event=util.getEvent(event);
                 util.preventEvent(event);
                 var keyname = key_name[m];
-                console.log(keyname);
                 url = 'edit.html?keyname='+keyname;
                 window.location.href=url;
             });
         })(m);
-        
-        /*
-        //监听按下事件，绑定向左滑动操作函数
-        (function(m){
-            util.addEvent(list_con[m],'touchstart',fnDown);
-        
-            function fnDown(){
-                if(this.style.overflow=='visible'){
-                    this.style.overflow='hidden';
-                    this.style.left=0;
-                }else{
-                    this.style.overflow='visible';
-                    this.style.left='-138px';
-                }
-                var keyname = key_name[m];
-                console.log(keyname);
-            }
-            
-        })(m);
-        
-        
-        
-        util.addEvent(list_edit[m],'touchstart',function(event){
-            event=util.getEvent(event);
-            util.preventEvent(event);
-            util.stopEvent(event);
-            
-        });
-        */
     
     }
     
