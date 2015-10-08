@@ -2,7 +2,7 @@
 
 本项目实现一个在移动端浏览器访问的个人记账软件。
 
-demo地址：https://vickyzhn.github.io/mobile-task/
+demo地址：https://vickyzhn.github.io/mobile-task/ <br/>（注：demo地址可在移动端查看，如在浏览器查看，需用开发者工具打开模拟器进行查看）
 
 目前实现的功能如下：
 * 账目编辑页面：新建账目、实时预览及账目修改，支持不同类型的账目记录（数据通过localStorage存储）
